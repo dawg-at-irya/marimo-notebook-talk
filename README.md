@@ -9,3 +9,7 @@ Jupyter notebooks make it fun and easy to do science with Python, especially for
 ## Resumen
 
 Los cuadernos de Jupyter hacen que sea divertido y fácil hacer ciencia con Python, especialmente para el trabajo exploratorio. Sin embargo, no están exentos de problemas. Por ejemplo, el resultado depende del orden en el que se ejecutan las celdas, lo que significa que es fácil que un cuaderno termine en un estado roto o no reproducible. Marimo es un nuevo tipo de cuaderno que busca resolver este problema y muchos otros. Adopta un enfoque “reactivo” para la ejecución, lo que garantiza la consistencia. Presento una breve demostración de las características de Marimo, mientras discuto sus ventajas y desventajas, así como los cambios de mentalidad necesarios para utilizarlo de manera efectiva.
+
+## Log of installation/configuration steps
+
+This is in the linked org-mode file [INSTALL_LOG.org](./INSTALL_LOG.org).
