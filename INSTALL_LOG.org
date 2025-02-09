@@ -18,6 +18,7 @@ First I check that uv is up to date
 #+end_src
 
 #+RESULTS:
+
 #+begin_example
   info: Checking for updates...
   success: Upgraded uv from v0.5.13 to v0.5.29! https://github.com/astral-sh/uv/releases/tag/0.5.29
@@ -30,6 +31,7 @@ Then initialize a project in the current directory
 #+end_src
 
 #+RESULTS:
+
 #+begin_example
   Initialized project `dawgi-marimo-talk`
 #+end_example
@@ -40,6 +42,7 @@ Then initialize a project in the current directory
 #+end_src
 
 #+RESULTS:
+
 #+begin_example
   INSTALL_LOG.org
   LICENSE
@@ -56,6 +59,7 @@ Test that the python script can run
 #+end_src
 
 #+RESULTS:
+
 #+begin_example
   Hello from dawgi-marimo-talk!
 #+end_example
@@ -121,6 +125,7 @@ We also add astropy since we are sure to need it
 #+end_src
 
 #+RESULTS:
+
 #+begin_example
 Resolved 29 packages in 193ms
 Installed 4 packages in 39ms
