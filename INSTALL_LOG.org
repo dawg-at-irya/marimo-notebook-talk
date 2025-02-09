@@ -1,6 +1,6 @@
 * Steps to install, configure, and demonstrate Marimo
 :PROPERTIES:
-:header-args: :cmdline "2>&1"
+:header-args: :cmdline "2>&1" :wrap example
 :ID:       0E1B153D-808F-455D-8A7E-9EA30C9C8783
 :END:
 
@@ -18,8 +18,10 @@ First I check that uv is up to date
 #+end_src
 
 #+RESULTS:
-: info: Checking for updates...
-: success: Upgraded uv from v0.5.13 to v0.5.29! https://github.com/astral-sh/uv/releases/tag/0.5.29
+#+begin_example
+  info: Checking for updates...
+  success: Upgraded uv from v0.5.13 to v0.5.29! https://github.com/astral-sh/uv/releases/tag/0.5.29
+#+end_example
 
 Then initialize a project in the current directory
 
@@ -28,19 +30,24 @@ Then initialize a project in the current directory
 #+end_src
 
 #+RESULTS:
-: Initialized project `dawgi-marimo-talk`
+#+begin_example
+  Initialized project `dawgi-marimo-talk`
+#+end_example
+
 
 #+begin_src fish :results verbatim
   ls
 #+end_src
 
 #+RESULTS:
-: INSTALL_LOG.org
-: LICENSE
-: README.md
-: hello.py
-: pyproject.toml
-: uv.lock
+#+begin_example
+  INSTALL_LOG.org
+  LICENSE
+  README.md
+  hello.py
+  pyproject.toml
+  uv.lock
+#+end_example
 
 Test that the python script can run
 
@@ -49,7 +56,9 @@ Test that the python script can run
 #+end_src
 
 #+RESULTS:
-: Hello from dawgi-marimo-talk!
+#+begin_example
+  Hello from dawgi-marimo-talk!
+#+end_example
 ** DONE Make sure marimo is installed
 CLOSED: [2025-02-08 Sat 22:04]
 I was wondering which of two approaches to use:
@@ -107,16 +116,18 @@ First I will try the whole project approach. (Note that I had to use the :cmdlin
 
 We also add astropy since we are sure to need it
 
-#+begin_src fish :results verbatim 
+#+begin_src fish :results verbatim
   uv add astropy 
 #+end_src
 
 #+RESULTS:
-: Resolved 29 packages in 193ms
-: Installed 4 packages in 47ms
-:  + astropy==7.0.1
-:  + astropy-iers-data==0.2025.2.3.0.32.42
-:  + numpy==2.2.2
-:  + pyerfa==2.0.1.5
+#+begin_example
+Resolved 29 packages in 193ms
+Installed 4 packages in 39ms
+ + astropy==7.0.1
+ + astropy-iers-data==0.2025.2.3.0.32.42
+ + numpy==2.2.2
+ + pyerfa==2.0.1.5
+#+end_example
 
 
