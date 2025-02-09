@@ -1,0 +1,5 @@
+* Plan for Marimo live demo
+
+- Make a blackbody spectrum plot
+  - Turn on format-on-save in the settings
+- Use a UI slider or similar to set the temperature
