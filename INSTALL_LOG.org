@@ -6,7 +6,122 @@
 
 - I want to do everything using uv, with the "modern" approach
 - This is unlike the examples given in the marimo documentation, which use uv but in the legacy pip-compatible mode
-** DONE Initial setup
+** Second try: use ~uvx~ and ~marimo edit --sandbox~
+- This improves reproducibility by using a dedicated environment for the notebook, and installing all the dependencies in there via uv
+*** Make sure uv is installed and up to date
+#+begin_src sh
+  uv self update
+#+end_src
+
+#+RESULTS:
+
+#+begin_example
+info: Checking for updates...
+success: You're on the latest version of uv (v0.5.29)
+#+end_example
+
+*** DONE Make sure marimo is available with all the extras
+CLOSED: [2025-02-09 Sun 20:05]
+- Once again, we have a choice to make
+  1. Install marimo with ~uv tool install marimo~, which will put it in the PATH, so we can run it with just ~marimo~
+  2. Use ~uvx marimo~ whenever we want to run it
+- The [[https://docs.astral.sh/uv/concepts/tools/][uv tool docs]] recommend the second, so that is what I was going to do
+  #+begin_quote
+  In most cases, executing a tool with uvx is more appropriate than installing the tool. 
+  #+end_quote
+- *HOWEVER*, this is not easy at the moment.
+  - ~uvx marimo[recommended]~ does not work quite yet
+    - At the moment, we would have to do ~uvx --with marimo[recommended] marimo~ every time, which is a bit of a mouthful
+  - Although there is a [[https://github.com/astral-sh/uv/pull/11337][pull request]] to fix this, which hopefully will get merged soon
+- So, in the meantime I will use the install route
+
+
+#+begin_src sh
+  uv tool install marimo[recommended]
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Resolved 51 packages in 13ms
+Installed 51 packages in 70ms
+ + altair==5.5.0
+ + annotated-types==0.7.0
+ + anyio==4.8.0
+ + attrs==25.1.0
+ + certifi==2025.1.31
+ + click==8.1.8
+ + distro==1.9.0
+ + docutils==0.21.2
+ + duckdb==1.2.0
+ + fastjsonschema==2.21.1
+ + h11==0.14.0
+ + httpcore==1.0.7
+ + httpx==0.28.1
+ + idna==3.10
+ + itsdangerous==2.2.0
+ + jedi==0.19.2
+ + jinja2==3.1.5
+ + jiter==0.8.2
+ + jsonschema==4.23.0
+ + jsonschema-specifications==2024.10.1
+ + jupyter-core==5.7.2
+ + marimo==0.11.0
+ + markdown==3.7
+ + markupsafe==3.0.2
+ + narwhals==1.25.2
+ + nbformat==5.10.4
+ + openai==1.61.1
+ + packaging==24.2
+ + parso==0.8.4
+ + platformdirs==4.3.6
+ + polars==1.22.0
+ + psutil==6.1.1
+ + pyarrow==19.0.0
+ + pycrdt==0.11.1
+ + pydantic==2.10.6
+ + pydantic-core==2.27.2
+ + pygments==2.19.1
+ + pymdown-extensions==10.14.3
+ + pyyaml==6.0.2
+ + referencing==0.36.2
+ + rpds-py==0.22.3
+ + ruff==0.9.5
+ + sniffio==1.3.1
+ + sqlglot==26.4.1
+ + starlette==0.45.3
+ + tomlkit==0.13.2
+ + tqdm==4.67.1
+ + traitlets==5.14.3
+ + typing-extensions==4.12.2
+ + uvicorn==0.34.0
+ + websockets==14.2
+Installed 1 executable: marimo
+#+end_example
+
+
+  
+*** DONE Edit the notebook in a sandbox environment
+CLOSED: [2025-02-09 Sun 20:19]
+#+begin_src sh :eval no
+  marimo edit --sandbox dawgi-marimo-02.py
+#+end_src
+
+*** DONE Try importing packages
+CLOSED: [2025-02-09 Sun 20:45]
+- When you try to import a third-party package, we get an import error
+- But, we also get a big red "Missing Packages" dialog with a list of missing packages to install
+  - *NOTE:* Careful that the dialog is not covered up by the expanded left panel
+
+** First try: use ~uv init/add/run~
+- This version is now moved to a sub-folder
+  - [[file:first-try-uv-project/]]
+- It now runs correctly in there with
+  #+begin_src sh
+    uv run marimo edit dawgi-marimo.py
+  #+end_src
+- This took me some effort - I had to nuke the .venv folder and start again because of some hardwired paths
+  - On reflection, the paths may have just been in environment variables, but still
+*** DONE Initial setup
 CLOSED: [2025-02-08 Sat 18:49]
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2025-02-08 Sat 18:49] \\
@@ -63,7 +178,7 @@ Test that the python script can run
 #+begin_example
   Hello from dawgi-marimo-talk!
 #+end_example
-** DONE Make sure marimo is installed
+*** DONE Make sure marimo is installed
 CLOSED: [2025-02-08 Sat 22:04]
 I was wondering which of two approaches to use:
 1. Add all dependencies to the whole project (in pyproject.toml)
@@ -209,7 +324,8 @@ Installed 13 packages in 52ms
  + tzdata==2025.1
 #+end_example
 
-** TODO Running marimo
+*** DONE Running marimo
+CLOSED: [2025-02-09 Sun 19:31]
 - Again we have two different ways of proceeding here:
   1. We could just use ~uv run~ before everything. This will automatically make sure that the venv is up to date and then use it under the hood
   2. Or we can use ~uv sync~ to get everything up to date, then activate the venv ourselves with ~source .venv/bin/activate.fish~. That way, we can just type ~marimo~ instead of ~uv run marimo~.
@@ -271,3 +387,5 @@ Commands:
 #+begin_src sh :eval no
   uv run marimo edit dawgi-marimo.py
 #+end_src
+
+* 

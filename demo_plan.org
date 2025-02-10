@@ -2,4 +2,28 @@
 
 - Make a blackbody spectrum plot
   - Turn on format-on-save in the settings
+  - Seems that we can use emacs bindings C-x C-s to save
+- First version [[file:second-try-sandbox/dawgi-marimo-02.py]]
+  - Show that it is just like a jupyter notebook in many ways
+    - But it has auto installation of dependencies
+      - And these are written to a file
+    - And it has inline documentation (popups and side panel)
+  - Then show the reactive property by changing the temperature of the black body
+    - The graph changes automatically!    
 - Use a UI slider or similar to set the temperature
+- Show the dependency graph with the inputs and outputs of each cell
+  - Mention that it is a DAG
+- Show the "app view" for cleaner appearance
+- Mention that the order of the cells does not matter
+  - So, for instance we can move the imports to the end if we like
+  - And put the main results at the top, with the details hidden below
+- Show the python file in an editor (e.g., Emacs)
+  - Show the metadata header at the top, giving the package dependencies
+    - Mention that this is a python standard and should be respected by multiple tools
+  - Explain how each cell is an anonymous function, which is decorated
+  - Show how we can edit the python file, and it is picked up by the marimo app (but the cells need to be re-run by hand)
+- Talk about how all the variables are global. Cannot be repeated in another cell
+  - Prefix with underscore to make cell-local
+  - But better to avoid by making more use of functions or classes
+- That will do
+  - Maybe show my clawpack notebook to illustrate more advanced features
