@@ -22,6 +22,9 @@ success: You're on the latest version of uv (v0.5.29)
 
 *** DONE Make sure marimo is available with all the extras
 CLOSED: [2025-02-09 Sun 20:05]
+:PROPERTIES:
+:ID:       3F280F91-5993-434D-97C1-E31D8F3EE3F7
+:END:
 - Once again, we have a choice to make
   1. Install marimo with ~uv tool install marimo~, which will put it in the PATH, so we can run it with just ~marimo~
   2. Use ~uvx marimo~ whenever we want to run it
@@ -98,6 +101,12 @@ Installed 51 packages in 70ms
 Installed 1 executable: marimo
 #+end_example
 
+**** How to uninstall
+To give a clean slate for the live demo
+
+#+begin_src sh
+  uv tool uninstall marimo
+#+end_src
 
   
 *** DONE Edit the notebook in a sandbox environment

@@ -1,4 +1,7 @@
 * Plan for Marimo live demo
+:PROPERTIES:
+:ID:       A341735E-0D05-4441-9D4C-8360A209D6C8
+:END:
 
 - Make a blackbody spectrum plot
   - Turn on format-on-save in the settings

@@ -1,0 +1,50 @@
+* Plan for presentation
+** What is Marimo?
+- A more modern take on interactive notebooks for python
+- https://marimo.io
+- https://docs.marimo.io/getting_started/
+** Live demo of Marimo
+- Install marimo ([[id:3F280F91-5993-434D-97C1-E31D8F3EE3F7][instructions]])
+  - I recommend using uv, but you can also use pip, conda, etc
+- Open a new marimo notebook in a sandbox
+  #+begin_src sh
+    marimo edit --sandbox dawgi-marimo-demo.py
+  #+end_src
+- Show how it deals with missing imports
+- Set up a blackbody spectrum for 10,000 K and plot it
+- Show how the plot is automatically updated if you change the temperature parameter
+- Demonstrate other features
+  - Inline docs, UI elements, markdown cells, app view, dependency graph, python file
+  - [[id:A341735E-0D05-4441-9D4C-8360A209D6C8][Detailed plan]]
+- The notebook that I wrote during the talk is [[file:live-demo/dawgi-marimo-demo02.py][dawgi-marimo-demo02.py]]
+- A slightly more elaborate version that I wrote while practicing is [[file:first-try-uv-project/dawgi-marimo.py][here]]
+- Show more complicated notebook
+  - [Canceled due to lack of time]
+** Reasons to try Marimo
+- Reactive notebooks guarantee consistency
+- Notebooks are saved as pure python files
+- Wide range of interactive UI elements
+- Sandbox mode for easy reproducibility and dependency management
+** Making the most out of Marimo
+- There are some "lazy practices" that are easy to fall into with Jupyter, but won't work so well with Marimo
+  - For instance, cut-and-paste style of programming
+- Keep global variables to a minimum
+- Use a declarative style rather than imperative style
+- Make extensive use functions and classes to organize your code
+** Reasons for caution
+- Marimo is very new
+  - Pace of change is rapid
+  - Still relatively few integrations with other tools compared with jupyter (Google Colab, Github diffs, Quarto, Jupyterbook, etc)
+  - Maybe it will never gain traction and be forgotten in a few years (unlikely, I think)
+- Python only (unlike jupyter which also supports Julia, R, Fortran, C++, etc)
+- Many of Marimo's advantages can be obtained in other ways, e.g.
+  - Jupytext for pure python representation
+  - Ipywidgets for interactive elements
+  - Streamlit or Dash for interactive dashboards and web apps
+- But Marimo has a unique set of features and is easier to use than most of these
+       
+
+
+
+
+
