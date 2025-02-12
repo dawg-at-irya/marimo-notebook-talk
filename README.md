@@ -27,7 +27,7 @@ Los cuadernos de Jupyter hacen que sea divertido y fácil hacer ciencia con Pyth
 
 ### Live demo of Marimo
 
--   Install marimo ([instructions](INSTALL_LOG.md))
+-   Install marimo ([instructions](INSTALL_LOG.org))
     -   I recommend using uv, but you can also use pip, conda, etc
 -   Open a new marimo notebook in a sandbox
     
@@ -37,7 +37,7 @@ Los cuadernos de Jupyter hacen que sea divertido y fácil hacer ciencia con Pyth
 -   Show how the plot is automatically updated if you change the temperature parameter
 -   Demonstrate other features
     -   Inline docs, UI elements, markdown cells, app view, dependency graph, python file
-    -   [Detailed plan](demo_plan.md)
+    -   [Detailed plan](demo_plan.org)
 -   The notebook that I wrote during the talk is [dawgi-marimo-demo02.py](live-demo/dawgi-marimo-demo02.py)
 -   A slightly more elaborate version that I wrote while practicing is [here](first-try-uv-project/dawgi-marimo.py)
 -   Show more complicated notebook
